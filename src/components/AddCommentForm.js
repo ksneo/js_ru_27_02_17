@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+//закинь в папку, а то быстро начнешь путаться в js/css файлах
 import "./AddCommentForm.css"
 
 export default class AddCommentForm extends Component {

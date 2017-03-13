@@ -4,6 +4,7 @@ import DayPicker, {DateUtils} from "react-day-picker"
 import "react-day-picker/lib/style.css"
 
 export default class RangeDatePicker extends Component {
+    //зачем этот конструктор?
     constructor(props) {
         super(props)
     }

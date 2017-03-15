@@ -12,6 +12,7 @@ class ArticleList extends Component {
         const {articles, toggleOpenItem, isItemOpened} = this.props
         const filterArticlesIds = this.props.filter.filterArticles.map((s) => s.value)
         const articleComponents = articles
+            //ок, но еще лучше делать фильтрацию в коннекте
             .filter(article => filterArticlesIds.indexOf(article.id) != -1)
             .filter(article => {
                 return (this.props.filter.filterDate.from <= new Date(article.date)) && (new Date(article.date) <= this.props.filter.filterDate.to)

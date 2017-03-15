@@ -21,8 +21,10 @@ export default (state = initState, action) => {
     switch (type) {
         case SELECT_TITLE_ARTICLE:
             return { ...state,
+                //а здесь лучше просто id хранить, а не все что в Select приходит
                 filterArticles: payload.articles
             }
+            //лишний return
             return {
                 ...state,
                 filterArticles: payload.articles

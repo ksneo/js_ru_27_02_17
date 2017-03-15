@@ -14,7 +14,6 @@ class ArticleList extends Component {
         const articleComponents = articles
             .filter(article => filterArticlesIds.indexOf(article.id) != -1)
             .filter(article => {
-                const a = 5
                 return (this.props.filter.filterDate.from <= new Date(article.date)) && (new Date(article.date) <= this.props.filter.filterDate.to)
             })
             .map(article => <li key={article.id}>

@@ -6,10 +6,18 @@ import accrdion from '../../decorators/accordion'
 import './style.css'
 
 class ArticleList extends Component {
+    
+
     render() {
         const {articles, toggleOpenItem, isItemOpened} = this.props
-
-        const articleComponents = articles.map(article => <li key={article.id}>
+        const filterArticlesIds = this.props.filter.filterArticles.map((s) => s.value)
+        const articleComponents = articles
+            .filter(article => filterArticlesIds.indexOf(article.id) != -1)
+            .filter(article => {
+                const a = 5
+                return (this.props.filter.filterDate.from <= new Date(article.date)) && (new Date(article.date) <= this.props.filter.filterDate.to)
+            })
+            .map(article => <li key={article.id}>
             <Article article={article}
                      isOpen={isItemOpened(article.id)}
                      toggleOpen={toggleOpenItem(article.id)}
@@ -30,10 +38,12 @@ class ArticleList extends Component {
     }
 }
 
+
 const mapStateToProps = state => {
     console.log('---', 'connect, state = ', state)
     return {
-        articles: state.articles
+        articles: state.articles,
+        filter: state.filter
     }
 }
 

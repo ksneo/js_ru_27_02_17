@@ -23,7 +23,7 @@ class Article extends Component {
             : null
         return (
             <div>
-                <h3 onClick={toggleOpen}>{article.title}</h3>
+                <h3 onClick={toggleOpen}>{article.title} {article.date}</h3>
                 <a href="#" onClick={this.handleDelete}>delete me</a>
                 <CSSTransition
                     transitionName="article"

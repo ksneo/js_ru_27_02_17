@@ -1,4 +1,4 @@
-import {INCREMENT, DELETE_ARTICLE, CHANGE_DATE_RANGE, CHANGE_SELECTION} from '../constants'
+import {INCREMENT, DELETE_ARTICLE, CHANGE_DATE_RANGE, CHANGE_SELECTION, GENERATE_ID, SUBMIT_COMMENT} from '../constants'
 
 export function increment() {
     const action = {
@@ -27,5 +27,12 @@ export function changeSelection(selected) {
     return {
         type: CHANGE_SELECTION,
         payload: { selected }
+    }
+}
+
+export function submitComment(comment, articleId) {
+    return {
+        type: SUBMIT_COMMENT,
+        payload: { comment, articleId }
     }
 }

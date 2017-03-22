@@ -49,12 +49,13 @@ class CommentList extends Component {
         }
 
         const commentItems = comments.map(id => <li key={id}><Comment id={id} /></li>)
+        const {articleId} = this.props 
         return (
             <div>
                 <ul>
                     {commentItems}
                 </ul>
-                <NewCommentForm />
+                <NewCommentForm articleId = {articleId} />
             </div>
         )
     }

@@ -2,6 +2,7 @@ import { SUBMIT_COMMENT} from '../constants'
 
 export default store => next => action => {
     switch (action.type) {
+        //через мидлвары будет проходить каждый экшин, они должны быть максимально общими, завязывать на конкретные экшины - плохая практика
         case SUBMIT_COMMENT:
             next(
                 {...action, id: generateUUID()}
